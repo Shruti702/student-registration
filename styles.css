@@ -1,0 +1,366 @@
+*{
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    background-color: black;
+}
+
+/*Styling of navbar*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(255, 255, 255, .1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+}
+
+header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+header:hover::before{
+    left: 100%;
+}
+
+.navbar a{
+    color: white;
+    font-size: 20px;
+    margin-left: 310px;
+}
+
+.navbar a:hover{
+    color: #f0f0f0;
+    text-shadow: 0 0 5px #ebdf76, 0 0 10px #ebdf76, 0 0 20px #ebdf76, 0 0 40px #ebdf76, 0 0 60px #ebdf76;
+}
+
+/*Styling of heading.*/
+.head{
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 300px;
+}
+
+.first{
+    font-weight: 800;
+    font-size: 60px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-20px);
+    }
+    75% {
+        transform: translateX(20px);
+    }
+}
+
+.second{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/*Styling for the form.*/
+.reg_sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20px;
+    margin-top: 230px;
+}
+
+.form-container{
+    width: 100%;
+    max-width: 450px;
+    background:rgba(255, 255, 255, .1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+}
+
+.form-container h2{
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 600;
+    color: white;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    font-size: 16px;
+    color: #fff;
+    padding-right: 25px;
+}
+
+.input-box input::placeholder {
+    color: #dadada;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: crimson;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: rgb(206, 37, 71);
+}
+
+/*Styling for displaying student records.*/
+.dis_sec{
+    min-height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heading{
+    color: white;
+    margin-bottom: 80px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 35px;
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card{
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    color: white;
+    width: 100%;
+    max-width: 350px;
+    transition: transform .3s ease;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card h3{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    padding-bottom: 10px;
+}
+
+.card p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card p strong{
+    color: #f0f0f0;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ed_btn, .del_btn {
+    padding: 10px 20px;
+    background-color: crimson;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.del_btn {
+    background-color: #630505;
+}
+
+.ed_btn:hover {
+    background-color: rgb(206, 37, 71);
+}
+
+.del_btn:hover {
+    background-color: #960909;
+}
+
+.ed_sec {
+    display: none; /* Initially hide the edit section */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20px;
+    margin-top: 100px;
+}
+
+/*styling for scrollbar.*/
+.scrollable-cards {
+    max-height: 80vh; 
+    overflow-y: auto; 
+    padding-right: 15px; 
+}
+
+.scrollable-cards::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-cards::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.scrollable-cards::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+/*for responsiveness of the application.*/
+/*for the tablet (641px - 1024px)*/
+@media (max-width: 1024px){
+    header{
+        padding: 20px 40px;
+        justify-content: center;
+    }
+
+    .navbar{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .navbar a{
+        margin-left: 0;
+    }
+
+    .head{
+        margin-top: 200px;
+        padding: 0 20px;
+    }
+
+    .first{
+        font-size: 48px;
+    }
+
+    .second{
+        font-size: 18px;
+    }
+}
+
+/*for mobile (<= 640px)*/
+@media (max-width: 640px){
+    header{
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .head{
+        margin-top: 220px;
+        padding: 0 15px;
+    }
+
+    .first{
+        font-size: 32px;
+        animation: none;
+    }
+
+    .second{
+        font-size: 16px;
+    }
+
+    .reg_sec, .dis_sec, .ed_sec{
+        padding: 50px 10px;
+        margin-top: 80px;
+    }
+
+    .form-container{
+        padding: 25px;
+    }
+
+    .cards-container{
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .card{
+        max-width: 95%;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
